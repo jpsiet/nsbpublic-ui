@@ -1,0 +1,20 @@
+button.disabled{
+  background-color: gray;;
+}
+
+button{
+  background-color: green;
+}
+
+div{
+  margin: 5px;
+}
+:host{
+  ::ng-deep{
+    app-basic-input.ng-invalid{
+      border: 1px solid red;;
+    }
+  }
+}
+
+

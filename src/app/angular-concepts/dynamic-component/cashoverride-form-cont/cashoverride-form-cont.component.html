@@ -1,0 +1,58 @@
+<div [formGroup]="form" >
+  <app-cashoverride-cont  [formControlName]="cashOverridesFormField" ></app-cashoverride-cont>
+
+
+  <!-- <address-form formControlName="address"></address-form> -->
+
+  <!-- use Of FOrm Array Logic -->
+  <!--
+   Skills:
+   <div formArrayName="skills">
+     <div *ngFor="let skill of skills.controls; let i=index">
+       <div [formGroupName]="i">
+         {{i}}
+         skill name :
+         <input type="text" formControlName="skill">
+         exp:
+         <input type="text" formControlName="exp">
+
+         <button (click)="removeSkill(i)">Remove</button>
+       </div>
+     </div>
+     <div>
+      <button type="button" (click)="addSkills()">Add Skills</button>
+     </div> -->
+
+
+  <!-- Form Array Custom Cmponent -->
+
+  <!-- Skills:
+  <div formArrayName="skills">
+    <div *ngFor="let skill of skills.controls; let i=index">
+
+        <app-skill [skill]="skill"  [formGroupName]="i" (removeSkill)="removeSkill(i)"></app-skill>
+
+    </div>
+    <div>
+      <button type="button" (click)="addSkills()">Add Skills</button>
+    </div>
+  </div>
+
+  <app-basic-input [formControlName]="cashOverridesFormField"></app-basic-input>
+  <input [formControlName]="cashOverridesFormField" value="Jitendra">
+  <div>
+    <p>name</p>
+    <input [formControlName]="nameFormField" value="Jitendra">
+  </div>
+
+  <div>
+    <select [formControlName]="selectFormField">
+      <option *ngFor="let option of options" [value]="option.value">
+        {{option.label}}
+      </option>
+    </select>
+  </div> -->
+  <!-- <pre>{{form.controls['address'].errors|json}}</pre>
+  <pre>{{form.valid|json}}</pre> -->
+  <button (click)="handleForm()" [ngClass]="{'disabled':!form.valid}" [disabled]="!form.valid"> apply</button>
+</div>

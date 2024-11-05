@@ -1,0 +1,88 @@
+<div class="main-container">
+ <header class="header ">
+    <p> Test Header </p>
+    <!-- <div>
+      <mat-spinner></mat-spinner>
+    </div> -->
+  </header>
+  <div class="basic-container">
+    <p>
+      <button mat-button (click)="openDialog()">Open Confirm Dialog</button>
+    </p>
+    <p>
+      <button mat-button (click)="openAlertDialog()">Open Alert Dialog</button>
+    </p>
+
+  </div>
+
+  <!-- <span
+    matTooltip="First line&#13;Second line"
+    matTooltipClass="my-tooltip"> Hello
+</span> -->
+
+<button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+<mat-menu #animals="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="angularResearch">Angular Research</button>
+  <button mat-menu-item [matMenuTriggerFor]="nsbPublic">NSB-Public</button>
+</mat-menu>
+
+
+
+<mat-menu #angularResearch="matMenu">
+  <button mat-menu-item routerLink="aggrid" routerLinkActive="active">aggrid</button>
+  <button mat-menu-item [routerLink]="['routing']">routing</button>
+  <button mat-menu-item >Search Input</button>
+  <button mat-menu-item >RXJS</button>
+  <button mat-menu-item >REDUX</button>
+  <button mat-menu-item>FORMS</button>
+  <button mat-menu-item>Type Script</button>
+  <button mat-menu-item>es6</button>
+  <button mat-menu-item>solid</button>
+  <button mat-menu-item>http</button>
+  <button mat-menu-item>di</button>
+  <button mat-menu-item>lc</button>
+  <button mat-menu-item>dynamic-component</button>
+  <button mat-menu-item>ch-shee</button>
+  <button mat-menu-item>cd</button>
+  <button mat-menu-item>ts</button>
+  <button mat-menu-item>style</button>
+  <button mat-menu-item>CP</button>
+  <button mat-menu-item>content-projection</button>
+  <button mat-menu-item>AM</button>
+  <button mat-menu-item>DS</button>
+  <button mat-menu-item>regex</button>
+
+  <button mat-menu-item>directive</button>
+  <button mat-menu-item>designPattern</button>
+  <button mat-menu-item>graphql</button>
+  <button mat-menu-item>component</button>
+  <button mat-menu-item>decorator</button>
+
+</mat-menu>
+
+<mat-menu #nsbPublic="matMenu">
+  <button mat-menu-item>Test1</button>
+  <button mat-menu-item>Test2</button>
+</mat-menu>
+
+
+
+<!-- <mat-card
+    matTooltip="One line \nTwo line"
+    matTooltipClass="line-broken-tooltip">
+</mat-card> -->
+<!-- <p matTooltip="Multiline Tooltip \n This is second line">Hello World!</p> -->
+  <div class="main-content">
+    <!-- <button type="button" class="btn btn-primary"> Modules </button> -->
+    <router-outlet> </router-outlet>
+    <!-- <app-students></app-students> -->
+  </div>
+
+
+
+
+  <footer class="main-footer">
+
+    <p> @ no Copy right Jitendra</p>
+  </footer>
+</div>
