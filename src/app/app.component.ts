@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ConfirmationDialog } from './confirmation-dialog/confirmation-dialog.compoennt';
 import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialog } from './angular-material/confirmation-dialog/confirmation-dialog.compoennt';
+import { AlertDialogComponent } from './angular-material/alert-dialog/alert-dialog.component';
 
-import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +17,7 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    this.openDialog();
+    //this.openDialog();
 
   }
   title = 'nsb-school-ui';

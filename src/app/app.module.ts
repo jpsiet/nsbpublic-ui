@@ -17,8 +17,8 @@ import { StudentsComponent } from './nsb-public/component/students/students.comp
 import { AddStudentsComponent } from './nsb-public/component/add-students/add-students.component';
 import { StudentGridComponent } from './nsb-public/component/student-grid/student-grid.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ConfirmationDialog } from './confirmation-dialog/confirmation-dialog.compoennt';
-import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
+import { AlertDialogComponent } from './angular-material/alert-dialog/alert-dialog.component';
+import { ConfirmationDialog } from './angular-material/confirmation-dialog/confirmation-dialog.compoennt';
 
 
 @NgModule({

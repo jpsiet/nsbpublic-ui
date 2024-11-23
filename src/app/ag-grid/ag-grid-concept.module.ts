@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SimpleAgGridComponent } from './simple-grid/simple-grid.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { ResponsiveAgGridComponent } from './responsive-grid/responsive-grid.component';
 
 
 
@@ -15,10 +16,15 @@ const routes: Routes = [
     component: SimpleAgGridComponent,
     children: [],
   },
+  {
+    path: 'responsive-grid',
+    component: ResponsiveAgGridComponent,
+    children: [],
+  },
 ];
 
 @NgModule({
-  declarations: [SimpleAgGridComponent],
+  declarations: [SimpleAgGridComponent,ResponsiveAgGridComponent],
   imports: [CommonModule, RouterModule.forChild(routes),
     AgGridModule
     ],

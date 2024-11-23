@@ -10,6 +10,11 @@ const routes: Routes = [
     path: 'aggrid',
     loadChildren: ()  => import('./ag-grid/ag-grid-concept.module').then((m) => m.AGGridConceptModule)
   },
+  {
+    path: 'tailwinds',
+    loadChildren: ()  => import('./tailwinds/tailwinds-concept.module').then((m) => m.TailwindsConceptModule)
+  },
+  
 {
     path: '',
     redirectTo: '',
