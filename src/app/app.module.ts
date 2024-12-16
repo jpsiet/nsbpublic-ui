@@ -19,6 +19,7 @@ import { StudentGridComponent } from './nsb-public/component/student-grid/studen
 import { MatDialogModule } from '@angular/material/dialog';
 import { AlertDialogComponent } from './angular-material/alert-dialog/alert-dialog.component';
 import { ConfirmationDialog } from './angular-material/confirmation-dialog/confirmation-dialog.compoennt';
+import { HeaderComponent } from './header-component';
 
 
 @NgModule({
@@ -27,8 +28,8 @@ import { ConfirmationDialog } from './angular-material/confirmation-dialog/confi
     StudentsComponent,
     StudentGridComponent,
     AddStudentsComponent,
-
-  ],
+    HeaderComponent,
+ ],
   imports: [
     BrowserModule,
     HttpClientModule,

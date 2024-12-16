@@ -1,0 +1,54 @@
+<header class="header ">
+  <button mat-button [matMenuTriggerFor]="nsbpublic">NSB Public </button>
+  <button mat-button [matMenuTriggerFor]="angularresearch">Angular Research</button>
+  <button mat-button [matMenuTriggerFor]="typescript">Type Script</button>
+  <button mat-button [matMenuTriggerFor]="cssresearch">CSS </button>
+  <button mat-button [matMenuTriggerFor]="others">others ... </button>
+  <mat-menu #nsbpublic="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="nsbPublic">NSB-Public</button>
+  </mat-menu>
+
+  <mat-menu #angularresearch="matMenu">
+    <button mat-menu-item routerLink="aggrid" routerLinkActive="active">aggrid</button>
+    <button mat-menu-item [routerLink]="['routing']">routing</button>
+    <button mat-menu-item  routerLink="searchInput">Search Input</button>
+    <button mat-menu-item  routerLink="forms">FORMS</button>
+    <button mat-menu-item  routerLink="dynamicComponent">dynamic-component</button>
+    <button mat-menu-item  routerLink="cheetSheet">ch-sheet</button>
+    <button mat-menu-item  routerLink="cd">cd</button>
+    <button mat-menu-item  routerLink="directive">directive</button>
+    <button mat-menu-item  routerLink="component">component</button>
+    <button mat-menu-item  routerLink="decorator">decorator</button>
+ 
+    <button mat-menu-item  routerLink="contentProjection">content-projection</button>
+    <button mat-menu-item  routerLink="am">AM</button>
+    <button mat-menu-item routerLink="http">http</button>
+    <button mat-menu-item routerLink="depedencyInjection">dependency Injection</button>
+    <button mat-menu-item routerLink="liefCycle">life cyclec</button>
+  </mat-menu>
+
+  <mat-menu #typescript="matMenu">
+    <button mat-menu-item routerLink="am">Type Script</button>
+    <button mat-menu-item routerLink="es6">es6</button>
+    <button mat-menu-item routerLink="solid">solid</button>
+    <button mat-menu-item routerLink="dataStrcuture">Data strcuture</button>
+  </mat-menu>
+
+  <mat-menu #cssresearch="matMenu">
+    <button mat-menu-item routerLink="style">style</button>
+    <button mat-menu-item routerLink="tailwinds" routerLinkActive="active">tailwinds</button>
+  </mat-menu>
+
+  <mat-menu #others="matMenu">
+    <button mat-menu-item  routerLink="rxjs">RXJS</button>
+    <button mat-menu-item  routerLink="redux">REDUX</button>
+    <button mat-menu-item  routerLink="regex">Regex </button>
+    <button mat-menu-item  routerLink="designPattern">Design Pattern</button>
+    <button mat-menu-item  routerLink="graphql">Graphql</button>
+  </mat-menu>
+
+  <mat-menu #nsbPublic="matMenu">
+    <button mat-menu-item routerLink="nsbPublic " >NSB Public </button>
+  </mat-menu>
+
+</header>
