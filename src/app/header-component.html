@@ -3,6 +3,7 @@
   <button mat-button [matMenuTriggerFor]="angularresearch">Angular Research</button>
   <button mat-button [matMenuTriggerFor]="typescript">Type Script</button>
   <button mat-button [matMenuTriggerFor]="cssresearch">CSS </button>
+  <button mat-button [matMenuTriggerFor]="plotly">Plotly </button>
   <button mat-button [matMenuTriggerFor]="others">others ... </button>
   <mat-menu #nsbpublic="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="nsbPublic">NSB-Public</button>
@@ -19,7 +20,7 @@
     <button mat-menu-item  routerLink="directive">directive</button>
     <button mat-menu-item  routerLink="component">component</button>
     <button mat-menu-item  routerLink="decorator">decorator</button>
- 
+
     <button mat-menu-item  routerLink="contentProjection">content-projection</button>
     <button mat-menu-item  routerLink="am">AM</button>
     <button mat-menu-item routerLink="http">http</button>
@@ -38,6 +39,12 @@
     <button mat-menu-item routerLink="style">style</button>
     <button mat-menu-item routerLink="tailwinds" routerLinkActive="active">tailwinds</button>
   </mat-menu>
+
+  <mat-menu #plotly="matMenu">
+    <button mat-menu-item routerLink="plotly-chart">basic</button>
+   </mat-menu>
+
+
 
   <mat-menu #others="matMenu">
     <button mat-menu-item  routerLink="rxjs">RXJS</button>
