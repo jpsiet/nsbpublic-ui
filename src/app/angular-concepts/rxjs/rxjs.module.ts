@@ -5,18 +5,22 @@ import { RxJxRotuingModule } from './rxjs-route.module';
 import { RxjsContComponent } from './rxjs-cont.component';
 import { RXJSResearchComponent } from './rxjs-research/rxjs-research.component';
 import { RxjsResearchCondCall } from './rxjs-research-cond-call/rxjs-research-cond-call';
+import { ConditionalApiCall } from './conditional-api-call/conditional-api-call';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     AngularWithRxjsComponent,
-    RXJSResearchComponent,
+    ConditionalApiCall,
     RxjsResearchCondCall,
     RxjsContComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RxJxRotuingModule
   ]
 })

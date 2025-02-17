@@ -44,7 +44,6 @@ export class FormArrayLessonComponent implements OnInit, ControlValueAccessor {
   }
 
   addLessons(val: any[]) {
-    debugger
     val.forEach((lesson) => {
       this.addLesson(lesson?.['title'], lesson?.['beginner']);
     });

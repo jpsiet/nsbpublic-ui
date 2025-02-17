@@ -23,7 +23,6 @@ export class AddStudentsComponent implements OnInit {
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    debugger
     console.warn(this.profileForm.value);
     const name =
       this.profileForm.value.firstName + '-' + this.profileForm.value.lastName;

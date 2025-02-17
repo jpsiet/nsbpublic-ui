@@ -19,9 +19,7 @@ export class RegexComponent implements OnInit {
   handleInput(event:any){
 
      this.currentAmout = event?.target.value;
-
-     debugger;
-  }
+ }
   formateString(value:string):string{
     let regex = /[$,]/g;
     return value.replace(regex,'');

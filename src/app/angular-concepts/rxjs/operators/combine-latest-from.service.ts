@@ -39,10 +39,10 @@ export class CombineLatestFromService {
   constructor() {}
 
   test() {
-    debugger
-    const clicks = interval(5000);
-    const timer = interval(1000);
-    const result = clicks.pipe(withLatestFrom(timer));
-    result.subscribe((x) => console.log("from Latest" + x));
+    
+    // const clicks = interval(5000);
+    // const timer = interval(1000);
+    // const result = clicks.pipe(withLatestFrom(timer));
+    // result.subscribe((x) => console.log("from Latest" + x));
   }
 }
