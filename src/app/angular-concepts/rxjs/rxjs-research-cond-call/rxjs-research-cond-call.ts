@@ -1,25 +1,7 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  OnInit,
-  Type,
-  ViewChild,
-} from '@angular/core';
-import { fromEvent, interval, of, Subject, Subscription } from 'rxjs';
-import {
-  debounceTime,
-  filter,
-  map,
-  mapTo,
-  mergeMap,
-  scan,
-  share,
-  shareReplay,
-  startWith,
-  switchMap,
-  takeUntil,
-} from 'rxjs/operators';
+
+import { Component, OnInit } from '@angular/core';
+import { HttpsToDoService } from '../../https/services/https.todos-service';
+import { filter, map, Subject, switchMap } from 'rxjs';
 
  type ConfgiType =  {
    id:number,
@@ -40,31 +22,50 @@ export class RxjsResearchCondCall implements OnInit {
  config:Subject<ConfgiType> = new Subject<WeightType>();
  weights: Subject<WeightType> = new Subject<WeightType>();
 
- handleConfigData(){
-  debugger
-  const random = Math.ceil(Math.random()*1000);
-  this.config.next({id:random, name:'config'+ random});
+ constructor(private  service:HttpsToDoService){}
 
-  const randomW = Math.ceil(Math.random()*1000);
+ handleChangeData(){
+  const random = Math.ceil(Math.random()*10);
+  this.config.next({id:random, name:'config'+ random});
+  const randomW = Math.ceil(Math.random()*10);
+  this.weights.next({id:randomW, name:'weight'+ random});
+ }
+
+ handleMatchData(){
+  const random = 5;
+  this.config.next({id:random, name:'config'+ random});
+ const randomW = 5;
   this.weights.next({id:randomW, name:'weight'+ random});
  }
 
  ngOnInit(): void {
-  debugger
-
   this.config.pipe(
-    switchMap(val => {
-      debugger
-       return [ of(val), this.weights.pipe()]
+    switchMap((configResponse:ConfgiType)  => {
+      console.log('configResponse', configResponse );
+         return  this.weights.pipe( map( (weightResponse:WeightType) => {  
+          console.log("weightResponse", weightResponse);
+          return {configResponse,weightResponse}}))
     }),
-    filter( val => {
-      console.log(val);
-      debugger;
-      return true;
-    })
+    filter( ({configResponse,weightResponse}) => {
+    
+      return !(configResponse.id === weightResponse.id)
+    }),
+    switchMap(({configResponse,weightResponse}) =>{
+       console.log( "as both id diff , so now time to do service call");
+       return  this.service.getUsersByServiceId(configResponse.id).pipe( 
+          
+        map((userResponse) =>  {
+          console.log("userResponse", userResponse);
+          return {configResponse,weightResponse,userResponse}})
+
+       )})
   ).subscribe(
-    val => {
-      console.log(val);
+    ({configResponse,weightResponse,userResponse}) => {
+      console.log(" all response Here For User ");
+      console.log("configResponse", configResponse);
+      console.log("weightResponse", weightResponse);
+      console.log("userResponse", userResponse);
+    
     }
   )
 
