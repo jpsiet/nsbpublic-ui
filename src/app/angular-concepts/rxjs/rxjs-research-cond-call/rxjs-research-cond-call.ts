@@ -24,21 +24,29 @@ export class RxjsResearchCondCall implements OnInit {
 
  constructor(private  service:HttpsToDoService){}
 
- handleChangeData(){
+ handleChangeConfigData(){
   const random = Math.ceil(Math.random()*10);
   this.config.next({id:random, name:'config'+ random});
-  const randomW = Math.ceil(Math.random()*10);
-  this.weights.next({id:randomW, name:'weight'+ random});
  }
 
  handleMatchData(){
   const random = 5;
   this.config.next({id:random, name:'config'+ random});
- const randomW = 5;
-  this.weights.next({id:randomW, name:'weight'+ random});
+  this.weights.next({id:random, name:'weight'+ random});
  }
 
+ handleChangeWeightData(){
+  const randomW = Math.ceil(Math.random()*10);
+  this.weights.next({id:randomW, name:'weight'+ randomW});
+ }
+
+ 
+
  ngOnInit(): void {
+  //  in this case config will response for trigger the flow first... and then followed by weights
+  // then service call, no other order that's what matter here 
+  // if we want  something like  order not matter for weights and config then we can do 
+  //  combine latest  like operatore
   this.config.pipe(
     switchMap((configResponse:ConfgiType)  => {
       console.log('configResponse', configResponse );
