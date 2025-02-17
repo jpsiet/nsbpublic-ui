@@ -25,6 +25,14 @@ const routes: Routes = [
   
   
   
+
+  {
+    path: 'plotly-chart',
+    loadChildren: ()  => import('./plotly/plotly-concept.module').then((m) => m.PlotlyConceptModule)
+  },
+
+
+
 {
     path: '',
     redirectTo: '',
