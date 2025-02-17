@@ -30,8 +30,10 @@ export class PlotlyFacetComponent  implements OnInit ,AfterViewInit  {
    }
 
    ngAfterViewInit() {
-    debugger
-    Plotly.newPlot(this.plotId, this.data as any , this.layout);
+
+    Plotly.newPlot(this.plotId, this.data as any , this.layout,{
+
+    });
   }
 
 

@@ -20,7 +20,10 @@ const routes: Routes = [
     loadChildren: ()  => import('./plotly/plotly-concept.module').then((m) => m.PlotlyConceptModule)
   },
 
-
+  {
+    path: 'rxjs',
+    loadChildren: ()  => import('./angular-concepts/rxjs/rxjs.module').then((m) => m.RxjsModule)
+  },
 
 {
     path: '',

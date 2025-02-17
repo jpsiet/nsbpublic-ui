@@ -11,6 +11,6 @@ export class RxjsContComponent implements OnInit {
   constructor(private observable: CombineLatestFromService) {}
 
   ngOnInit(): void {
-    this.observable.test();
+    //this.observable.test();
   }
 }
