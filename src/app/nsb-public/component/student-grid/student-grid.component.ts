@@ -91,11 +91,10 @@ export class StudentGridComponent implements OnInit, OnChanges {
 
   fetchStudents() {
     this.studentService.getStudentList().subscribe((val:Array<Student>) => {
-      debugger
+     
       this.rowData = val;
     },err=>{
       console.log(err);
-      debugger
-    });
+     });
   }
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Person } from '../../interfaces/person';
+import { Person, ToDo } from '../../interfaces/person';
 
 
 
@@ -12,12 +12,21 @@ export class HttpsToDoService {
 
   constructor(private http: HttpClient) { }
 
-  getToDOService(): Observable<Person[]> {
-    return this.http.get<Person[]>('https://jsonplaceholder.typicode.com/todos');
+  getToDOService(): Observable<ToDo[]> {
+    return this.http.get<ToDo[]>('https://jsonplaceholder.typicode.com/todos');
   }
 
-  getToDOByIdService(): Observable<Person> {
-    return this.http.get<Person>('https://jsonplaceholder.typicode.com/todos/1');
+  getToDOServiceById(id:number): Observable<ToDo> {
+    return this.http.get<ToDo>(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  }
+
+  getUsersService(): Observable<Person> {
+    return this.http.get<Person>('https://jsonplaceholder.typicode.com/users');
+  }
+
+  getUsersByServiceId(id:number): Observable<Person> {
+    console.log(" calling service call for id", id)
+    return this.http.get<Person>(`https://jsonplaceholder.typicode.com/users/${id}`);
   }
 
   getTCourse(): Observable<any> {

@@ -24,7 +24,6 @@ export class HttpsComponent implements OnInit {
         console.log(val)
        },err =>{
         console.log(err);
-        debugger
        })
   }
 

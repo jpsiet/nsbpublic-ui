@@ -14,6 +14,16 @@ const routes: Routes = [
     path: 'tailwinds',
     loadChildren: ()  => import('./tailwinds/tailwinds-concept.module').then((m) => m.TailwindsConceptModule)
   },
+  {
+    path: 'rxjs',
+    loadChildren: ()  => import('./angular-concepts/rxjs/rxjs.module').then((m) => m.RxjsModule)
+  },
+  {
+    path: 'nsbPublic',
+    loadChildren: ()  => import('./nsb-public/nsb-public.module').then((m) => m.NSBPublicModule)
+  },
+  
+  
   
 {
     path: '',

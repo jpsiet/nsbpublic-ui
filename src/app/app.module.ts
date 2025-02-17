@@ -13,10 +13,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularSvgIconModule, SvgIconComponent } from 'angular-svg-icon';
 
 import { MaterialExampleModule } from './material.module';
-import { StudentsComponent } from './nsb-public/component/students/students.component';
-import { AddStudentsComponent } from './nsb-public/component/add-students/add-students.component';
-import { StudentGridComponent } from './nsb-public/component/student-grid/student-grid.component';
-import { MatDialogModule } from '@angular/material/dialog';
 import { AlertDialogComponent } from './angular-material/alert-dialog/alert-dialog.component';
 import { ConfirmationDialog } from './angular-material/confirmation-dialog/confirmation-dialog.compoennt';
 import { HeaderComponent } from './header-component';
@@ -25,9 +21,6 @@ import { HeaderComponent } from './header-component';
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsComponent,
-    StudentGridComponent,
-    AddStudentsComponent,
     HeaderComponent,
  ],
   imports: [
@@ -40,7 +33,6 @@ import { HeaderComponent } from './header-component';
     AngularSvgIconModule.forRoot(),
     FormsModule,
     MaterialExampleModule
-
   ],
   entryComponents:[
     ConfirmationDialog, AlertDialogComponent

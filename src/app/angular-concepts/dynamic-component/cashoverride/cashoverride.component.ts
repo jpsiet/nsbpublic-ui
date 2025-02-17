@@ -35,8 +35,7 @@ export class CashoverrideComponent implements OnInit, ControlValueAccessor {
     this.value = obj;
     this.state = this.value.state;
     console.log("write value")
-    debugger;
-  }
+   }
 
   onChange = (value: any) => {};
   public onTouch = (): void => {};

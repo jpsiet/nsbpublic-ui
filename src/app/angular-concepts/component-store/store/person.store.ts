@@ -26,7 +26,6 @@ export class PersonStore
 
   constructor(private readonly _starWarsApiService: StarWarsApiService) {
     super(defaultState);
-debugger
     const saveWithData$ = this._saveEditPerson$.pipe(
       withLatestFrom(this.editedPerson$, this.editorId$),
       switchMap(([, person, personId]) =>
@@ -53,17 +52,17 @@ debugger
     tap((person) => console.log('editedPerson$', person))
   );
 
-  readonly loadPeople = this.updater((state, people: Person[] | null) => { debugger; return  ({
+  readonly loadPeople = this.updater((state, people: Person[] | null) => {  return  ({
     ...state,
     people: people || [],
   })});
 
   readonly setEditorId = this.updater(
-    (state, editorId: number | undefined) => { debugger; return ({ ...state, editorId })}
+    (state, editorId: number | undefined) => {  return ({ ...state, editorId })}
   );
 
   readonly setEditedPerson = this.updater(
-    (state, editedPerson: Person | undefined) => { debugger; return  ({ ...state, editedPerson }) }
+    (state, editedPerson: Person | undefined) => { return  ({ ...state, editedPerson }) }
   );
 
   readonly editPerson = this.effect(
@@ -71,9 +70,7 @@ debugger
       personId$.pipe(
         withLatestFrom(this.people$),
         tap<[number | undefined, Person[]]>(([id, people]) => {
-          debugger
           this.setEditorId(id);
-
           const personToEdit =
             !id && id !== 0
               ? undefined
@@ -88,7 +85,6 @@ debugger
     person$.pipe(
       withLatestFrom(this.people$),
       tap<[Person, Person[]]>(([person, people]) => {
-        debugger
         const id = person.id;
         const index = people.findIndex((cur) => {
           console.log('compare', cur, id, cur.id === id);

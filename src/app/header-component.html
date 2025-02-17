@@ -1,12 +1,9 @@
 <header class="header ">
-  <button mat-button [matMenuTriggerFor]="nsbpublic">NSB Public </button>
+  <button mat-button [matMenuTriggerFor]="nsbPublic">NSB Public </button>
   <button mat-button [matMenuTriggerFor]="angularresearch">Angular Research</button>
   <button mat-button [matMenuTriggerFor]="typescript">Type Script</button>
   <button mat-button [matMenuTriggerFor]="cssresearch">CSS </button>
   <button mat-button [matMenuTriggerFor]="others">others ... </button>
-  <mat-menu #nsbpublic="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="nsbPublic">NSB-Public</button>
-  </mat-menu>
 
   <mat-menu #angularresearch="matMenu">
     <button mat-menu-item routerLink="aggrid" routerLinkActive="active">aggrid</button>
@@ -48,7 +45,7 @@
   </mat-menu>
 
   <mat-menu #nsbPublic="matMenu">
-    <button mat-menu-item routerLink="nsbPublic " >NSB Public </button>
+    <button mat-menu-item routerLink="nsbPublic" >NSB Public </button>
   </mat-menu>
 
 </header>
