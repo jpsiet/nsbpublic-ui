@@ -62,6 +62,10 @@ export class RxjsResearchCondCall implements OnInit {
       debugger;
       return true;
     })
+  ).subscribe(
+    val => {
+      console.log(val);
+    }
   )
 
  }
