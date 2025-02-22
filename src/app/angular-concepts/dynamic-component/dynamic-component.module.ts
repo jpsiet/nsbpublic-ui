@@ -11,14 +11,20 @@ import { PeopleListComponent } from './people/people-list.component';
 import { TabsContComponent } from './tabs/tabs-cont.component';
 import { TestComponent } from './people/test.component';
 import { PersonEditComponent } from './people/people-edit.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CashoverrideFormContComponent } from './cashoverride-form-cont/cashoverride-form-cont.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BasicComponent } from './cashoverride/basic.comp';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { SkillComponent } from './skill/skill.component';
+import { NgForParent } from './ngForParent/ng-for-parent.component';
+import { NgForChildOne } from './ngForChildOne/ng-for-child-one.component';
+import { DataObservableService } from './data_observable';
+
 
 @NgModule({
   declarations: [
+    NgForParent,
+
+    NgForChildOne,
     DynamicComponentComponent,
     TabsComponent,
     TabComponent,
@@ -29,12 +35,13 @@ import { SkillComponent } from './skill/skill.component';
     BasicComponent,
     TestComponent,
     TabsContComponent,
-    CashoverrideFormContComponent,
+
     AddressFormComponent,
     SkillComponent,
   ],
   imports: [CommonModule, HttpClientModule,
             ReactiveFormsModule,
             DynamicComponentRoutingModule],
+            providers:[DataObservableService]
 })
 export class DynamicComponentModule {}

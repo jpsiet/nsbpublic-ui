@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { Interface } from 'readline';
-import { Person } from 'src/app/es6/services/execution-context.service';
 import { PeopleService } from '../people/people.service';
 import { TabComponent } from './tab.component';
 import { TabsComponent } from './tabs.component';
+import { Person } from '../../es6/services/execution-context.service';
 
 export interface People{
   id: number;  surname: string; twitter: string; name:string;
