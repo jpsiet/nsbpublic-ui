@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import { User } from "./user";
+import { HttpClient } from "@angular/common/http";
 
 const ANONYMOUS_USER: User = {
   firstName: '',
@@ -20,5 +21,8 @@ export class UserService {
  loadUser(user:User) {
      this.subject.next(user);
  }
+
+
+
 
 }

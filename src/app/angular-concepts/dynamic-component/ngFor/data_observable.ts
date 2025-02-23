@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { ngFWeightType } from './ngForChildTypes';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +9,11 @@ export class DataObservableService {
 
   constructor() { }
 
-  private dataSubject = new Subject<any>();
-  data$ = this.dataSubject.asObservable();
-  sendData(data: any) {
-    this.dataSubject.next(data);
+  private wightSubject = new Subject<ngFWeightType>();
+  data$ = this.wightSubject.asObservable();
+  sendWeightData(data: ngFWeightType) {
+    console.log(" sending new weight data",data);
+    this.wightSubject.next(data);
 }
     // handleChangeConfigData() {
     //   const random = Math.ceil(Math.random() * 10);

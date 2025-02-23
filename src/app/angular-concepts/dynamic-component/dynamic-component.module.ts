@@ -15,15 +15,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BasicComponent } from './cashoverride/basic.comp';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { SkillComponent } from './skill/skill.component';
-import { NgForParent } from './ngForParent/ng-for-parent.component';
-import { NgForChildOne } from './ngForChildOne/ng-for-child-one.component';
-import { DataObservableService } from './data_observable';
+import { NgForParent } from './ngFor/ngForParent/ng-for-parent.component';
+import { NgForChildOne } from './ngFor/ngForChildOne/ng-for-child-one.component';
+import { DataObservableService } from './ngFor/data_observable';
+
+
 
 
 @NgModule({
   declarations: [
     NgForParent,
-
     NgForChildOne,
     DynamicComponentComponent,
     TabsComponent,
