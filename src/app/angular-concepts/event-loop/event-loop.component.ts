@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-event-loop-component',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-loop.component.scss']
 })
 export class EventLoopComponent implements OnInit {
+
+   syncObservable = of('Synchronous Value');
 
   constructor() { }
 
@@ -109,6 +112,19 @@ console.log('End');
 
 
   }
+
+
+  observableSync(){
+    // in general observable async  bt some operator like of... make it sync. so will not go
+    // micro task
+   console.log("start");
+    this.syncObservable.subscribe((value: any) => {
+      console.log(value);  // Will log 'Synchronous Value' immediately
+    });
+     console.log("end");
+  }
+
+
 
 
 }

@@ -61,15 +61,16 @@ export class NgForChildOne implements OnInit, OnDestroy
       }
     }
     makeApiCall() {
-      // Simulating an API call
       console.log('API Call with:', { inputData: this.configAnalysis, observableData: this.weightObj });
+
+      // Simulating an API call
       this.cdRef.markForCheck();
     const request=   {
         title: this.configAnalysis.name,
         body: this.weightObj.name,
         userId: this.configAnalysis.order + '-'+  this.configAnalysis.view,
       }
-      this.ngForService.callUserService(request).subscribe();
+      this.ngForService.callUserService(request,true).subscribe();
     }
 
     handleUpdate()
