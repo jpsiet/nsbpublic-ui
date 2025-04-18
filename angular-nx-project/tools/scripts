@@ -1,0 +1,5 @@
+#!/bin/bash
+# This script is intended for custom tasks within the Nx workspace. 
+# You can add your custom scripts here to automate various tasks.
+
+echo "Running custom Nx scripts..."

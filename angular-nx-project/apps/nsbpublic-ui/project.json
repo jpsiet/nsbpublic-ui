@@ -1,0 +1,89 @@
+{
+  "name": "nsbpublic-ui",
+  "root": "apps/nsbpublic-ui",
+  "sourceRoot": "apps/nsbpublic-ui/src",
+  "projectType": "application",
+  "architect": {
+    "build": {
+      "builder": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/nsbpublic-ui",
+        "index": "apps/nsbpublic-ui/src/index.html",
+        "main": "apps/nsbpublic-ui/src/main.ts",
+        "polyfills": "apps/nsbpublic-ui/src/polyfills.ts",
+        "tsConfig": "apps/nsbpublic-ui/tsconfig.app.json",
+        "assets": [
+          "apps/nsbpublic-ui/src/favicon.ico",
+          "apps/nsbpublic-ui/src/assets"
+        ],
+        "styles": [
+          "apps/nsbpublic-ui/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/nsbpublic-ui/src/environments/environment.ts",
+              "with": "apps/nsbpublic-ui/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "extractCss": true,
+          "namedChunks": false,
+          "aot": true,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2kb",
+              "maximumError": "5kb"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "builder": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "browserTarget": "nsbpublic-ui:build"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "nsbpublic-ui:build:production"
+        }
+      }
+    },
+    "lint": {
+      "builder": "@angular-eslint/builder:lint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/nsbpublic-ui/src/**/*.ts",
+          "apps/nsbpublic-ui/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "builder": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/nsbpublic-ui/src/test.ts",
+        "polyfills": "apps/nsbpublic-ui/src/polyfills.ts",
+        "tsConfig": "apps/nsbpublic-ui/tsconfig.spec.json",
+        "karmaConfig": "apps/nsbpublic-ui/karma.conf.js",
+        "assets": [
+          "apps/nsbpublic-ui/src/favicon.ico",
+          "apps/nsbpublic-ui/src/assets"
+        ],
+        "styles": [
+          "apps/nsbpublic-ui/src/styles.css"
+        ],
+        "scripts": []
+      }
+    }
+  }
+}

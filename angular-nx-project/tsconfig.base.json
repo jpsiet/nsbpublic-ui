@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc",
+    "types": [],
+    "baseUrl": ".",
+    "paths": {
+      "@nsbpublic-ui/*": ["apps/nsbpublic-ui/src/*"],
+      "@libs/*": ["libs/*"]
+    }
+  },
+  "include": [
+    "apps/**/*.ts",
+    "libs/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

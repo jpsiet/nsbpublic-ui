@@ -1,0 +1,28 @@
+{
+  "npmScope": "angular-nx-project",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "apps/nsbpublic-ui",
+        "parallel": false
+      }
+    }
+  },
+  "generators": {
+    "@nrwl/angular:component": {
+      "style": "scss"
+    },
+    "@nrwl/angular:module": {
+      "flat": true
+    }
+  },
+  "projects": {
+    "nsbpublic-ui": {
+      "tags": []
+    }
+  }
+}

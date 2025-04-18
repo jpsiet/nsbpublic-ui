@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "projects": {
+    "nsbpublic-ui": {
+      "root": "apps/nsbpublic-ui",
+      "sourceRoot": "apps/nsbpublic-ui/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/nsbpublic-ui",
+            "index": "apps/nsbpublic-ui/src/index.html",
+            "main": "apps/nsbpublic-ui/src/main.ts",
+            "polyfills": "apps/nsbpublic-ui/src/polyfills.ts",
+            "tsConfig": "apps/nsbpublic-ui/tsconfig.app.json",
+            "assets": [
+              "apps/nsbpublic-ui/src/favicon.ico",
+              "apps/nsbpublic-ui/src/assets"
+            ],
+            "styles": [
+              "apps/nsbpublic-ui/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "nsbpublic-ui:build"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/nsbpublic-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/nsbpublic-ui/**/*.ts",
+              "apps/nsbpublic-ui/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
