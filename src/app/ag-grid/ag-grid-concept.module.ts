@@ -21,6 +21,11 @@ const routes: Routes = [
     component: ResponsiveAgGridComponent,
     children: [],
   },
+  {
+    path: 'enterprise-grid',
+    component: ResponsiveAgGridComponent,
+    children: [],
+  },
 ];
 
 @NgModule({
