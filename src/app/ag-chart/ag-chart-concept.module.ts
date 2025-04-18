@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { AgGridModule } from 'ag-grid-angular';
 import { SimpleAgChartComponent } from './simple-chart/app-chart-simple';
 
 import { AgChartsAngularModule } from 'ag-charts-angular';
