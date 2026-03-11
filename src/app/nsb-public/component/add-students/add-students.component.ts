@@ -6,19 +6,21 @@ import { StudentService } from '../../services/student.service';
 
 @Component({
   selector: 'app-add-students',
-  templateUrl: './add-students.component.html',
-  styleUrls: ['./add-students.component.scss'],
+  templateUrl: './add-students.component.html'
 })
 export class AddStudentsComponent implements OnInit {
   @Output() done: EventEmitter<any> = new EventEmitter();
   constructor(
-    private dialogRef: MatDialogRef<AddStudentsComponent>,
-    private studetnService: StudentService,
+    public dialogRef: MatDialogRef<AddStudentsComponent>,
+    private studentService: StudentService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
   profileForm = new UntypedFormGroup({
     firstName: new UntypedFormControl(''),
     lastName: new UntypedFormControl(''),
+    grade: new UntypedFormControl(''),
+    email: new UntypedFormControl(''),
+    age: new UntypedFormControl(''),
   });
 
   onSubmit() {
@@ -27,9 +29,10 @@ export class AddStudentsComponent implements OnInit {
     const name =
       this.profileForm.value.firstName + '-' + this.profileForm.value.lastName;
 
-    this.studetnService.addStudent({ name }).subscribe((data) => {
+    this.studentService.addStudent({ name }).subscribe((data) => {
       console.log(data);
-      this.done.emit('true');
+      this.done.emit(true);
+      this.dialogRef.close(true);
     });
   }
 
@@ -43,14 +46,14 @@ export class AddStudentsComponent implements OnInit {
       const namesSplit = name.split('-');
       let firstName = '';
       let lastName = '';
-      if (namesSplit.lenngth > 1) {
+      if (namesSplit.length > 1) {
         firstName = namesSplit[0];
         lastName = namesSplit[1];
       } else {
         firstName = name.slice(0, 4);
         lastName = name.slice(4, name.length);
       }
-      this.profileForm.setValue({ firstName, lastName });
+      this.profileForm.setValue({ firstName, lastName , grade: this.data.grade ?? '', email: this.data.email ?? '', age: this.data.age ?? ''} );
     }
   }
 

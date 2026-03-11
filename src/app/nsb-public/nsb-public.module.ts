@@ -22,19 +22,19 @@ const routes: Routes = [
     component: StudentsComponent,
     children: [],
   },
- 
+
 ];
 
 @NgModule({
-  declarations: [StudentsComponent,AddStudentsComponent,StudentGridComponent],
+  declarations: [StudentsComponent, AddStudentsComponent, StudentGridComponent],
   imports: [CommonModule, RouterModule.forChild(routes),
     AgGridModule,
     FormsModule,
-     BrowserModule,
-     ReactiveFormsModule,
-        HttpClientModule,
-        
-    ],
+    ReactiveFormsModule,
+    HttpClientModule,
+
+
+  ],
   providers: [],
 })
-export class NSBPublicModule {}
+export class NSBPublicModule { }
